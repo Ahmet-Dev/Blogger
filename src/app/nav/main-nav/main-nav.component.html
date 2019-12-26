@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#"><img id="logo" src="./../../../assets/titleweb.png"></a>
+      <ul class="navbar-nav mt-1 col-md-6 mr-5">
+        <li class="nav-item" [ngClass]="{ active: pageActive == 1 }">
+          <a class="nav-link" routerLink="/"
+            >Anasayfa <span class="sr-only">(current)</span></a
+          >
+        </li>
+
+        <li class="nav-item " [ngClass]="{ active: pageActive == 2 }">
+          <a class="nav-link" routerLink="/hakkimda"
+            >Hakkımda <span class="sr-only">(current)</span></a
+          >
+        </li>
+
+        <li class="nav-item " [ngClass]="{ active: pageActive == 3 }">
+          <a class="nav-link" routerLink="/iletisim"
+            >İletişim <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="/admin"
+            ><i class="fa fa-tools"></i> Yönetim Paneli
+            <span class="sr-only">(current)</span></a
+          >
+        </li>
+      </ul>
+      <form class="form-inline my-1 col-md-5 ml-1">
+        <input
+          #searchText
+          class="form-control mr-sm-0 col-md-8"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button
+          (click)="search(searchText.value)"
+          class="btn btn-outline-danger ml-3 col-md-1.5"
+          type="button"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
